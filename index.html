@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>1+ 开屏 · 科幻开屏壁纸</title>
+<style>
+  :root{
+    --bg:#03060c; --panel:rgba(12,26,40,.55); --line:rgba(120,230,255,.18);
+    --ice:#8fefff; --text:#eaf8ff; --dim:#6f93a6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC","Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 50% -10%, rgba(60,200,255,.16), transparent 70%),
+      radial-gradient(700px 500px at 85% 30%, rgba(40,120,255,.10), transparent 70%),
+      linear-gradient(180deg,#04070d,#02050a 60%,#020409);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;
+    background-image:linear-gradient(rgba(110,225,255,.055) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(110,225,255,.055) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(circle at 50% 20%, #000 20%, transparent 75%);
+    -webkit-mask-image:radial-gradient(circle at 50% 20%, #000 20%, transparent 75%);
+  }
+  .wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 22px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:42px;height:42px;border-radius:12px}
+  .brand b{font-size:17px;letter-spacing:.06em}
+  .brand span{display:block;font-size:10px;color:var(--dim);letter-spacing:.28em;margin-top:2px}
+  .pill{font-size:11px;color:var(--ice);border:1px solid var(--line);padding:6px 12px;border-radius:999px;
+    letter-spacing:.12em;background:rgba(20,60,85,.35)}
+  .hero{padding:46px 0 20px;text-align:center}
+  .hero h1{font-size:clamp(30px,7vw,52px);font-weight:300;letter-spacing:.06em;line-height:1.18}
+  .hero h1 em{font-style:normal;color:var(--ice);
+    text-shadow:0 0 28px rgba(90,230,255,.45)}
+  .hero p{margin:18px auto 0;max-width:520px;color:var(--dim);font-size:14px;line-height:1.9}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:999px;
+    font-size:15px;text-decoration:none;transition:.25s;border:1px solid transparent}
+  .btn-main{color:#001218;background:linear-gradient(120deg,#bff7ff,#63d9ff 45%,#2fa8ff);
+    box-shadow:0 12px 40px rgba(70,200,255,.28)}
+  .btn-main:hover{transform:translateY(-2px);box-shadow:0 18px 48px rgba(70,200,255,.38)}
+  .btn-ghost{color:var(--text);border-color:var(--line);background:rgba(12,26,40,.5);
+    backdrop-filter:blur(10px)}
+  .btn-ghost:hover{border-color:rgba(140,240,255,.45)}
+  .meta{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:22px;
+    font-size:11px;color:var(--dim);letter-spacing:.08em}
+  .meta i{font-style:normal;color:var(--ice)}
+  section{padding:56px 0 0}
+  h2{font-size:12px;letter-spacing:.42em;color:var(--ice);font-weight:500;text-align:center;
+    margin-bottom:8px}
+  .lead{text-align:center;color:var(--dim);font-size:13px;margin-bottom:30px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px 20px;
+    backdrop-filter:blur(14px);position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;inset:0;border-radius:22px;
+    background:linear-gradient(160deg,rgba(255,255,255,.09),transparent 45%)}
+  .card h3{font-size:15px;font-weight:500;margin-bottom:8px;color:#fff}
+  .card p{font-size:12.5px;color:var(--dim);line-height:1.8;position:relative}
+  .num{font-size:11px;color:var(--ice);letter-spacing:.2em;margin-bottom:12px;position:relative}
+  .shots{display:flex;gap:14px;overflow-x:auto;padding:6px 4px 14px;scrollbar-width:none}
+  .shots::-webkit-scrollbar{display:none}
+  .shot{flex:0 0 200px;border-radius:18px;border:1px solid var(--line);overflow:hidden;
+    background:#04080f}
+  .shot img{width:100%;display:block}
+  .shot span{display:block;font-size:10.5px;color:var(--dim);padding:9px 12px;letter-spacing:.06em}
+  ol.steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+  ol.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);
+    border-radius:16px;padding:16px 18px 16px 56px;position:relative;font-size:13px;color:#cfe6f2;
+    line-height:1.7;backdrop-filter:blur(10px)}
+  ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:18px;top:15px;
+    color:var(--ice);font-size:12px;letter-spacing:.14em}
+  .note{font-size:11.5px;color:#547b8d;line-height:1.9;margin-top:14px}
+  footer{margin-top:66px;padding:26px 0 40px;border-top:1px solid rgba(110,225,255,.1);
+    text-align:center;font-size:11px;color:#416372;line-height:2}
+  footer b{color:#7fb6ca;font-weight:500}
+  .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;pointer-events:none}
+  #toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
+    background:rgba(10,30,44,.92);border:1px solid rgba(140,240,255,.35);color:#dff6ff;
+    padding:12px 20px;border-radius:999px;font-size:12.5px;letter-spacing:.04em;
+    backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:.35s;z-index:9;
+    box-shadow:0 12px 40px rgba(0,0,0,.5)}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="assets/icon.png" alt="icon" />
+      <div>
+        <b>1+ 开屏</b>
+        <span>SCI-FI BOOT</span>
+      </div>
+    </div>
+    <div class="pill" id="verPill">v3.4</div>
+  </header>
+
+  <div class="hero">
+    <h1>让每一次解锁<br /><em>都是一次科幻启动</em></h1>
+    <p>解锁瞬间，全屏自检动画启动：逐字打字、关键词全息图形、中文配音、密钥体系与管理员后台。全部为本地运行，不联网、不上传。</p>
+    <div class="cta">
+      <a class="btn btn-main" id="dl" href="assets/1plus-boot-popup.apk" download>⬇ 下载安装包</a>
+      <a class="btn btn-ghost" href="#features">查看功能</a>
+    </div>
+    <div class="meta">
+      <span>版本 <i id="mVer">3.4</i></span>
+      <span>大小 <i id="mSize">445 KB</i></span>
+      <span>系统 <i>Android 6.0+</i></span>
+      <span>费用 <i>免费</i></span>
+    </div>
+  </div>
+
+  <section id="features">
+    <h2>FEATURES</h2>
+    <p class="lead">六个核心能力，全部离线运行</p>
+    <div class="grid">
+      <div class="card"><div class="num">01 / BOOT</div><h3>解锁自检动画</h3>
+        <p>11 段系统自检台词，逐字打出，边打字边播放配音，约 95 秒完整流程。</p></div>
+      <div class="card"><div class="num">02 / HOLO</div><h3>关键词全息图形</h3>
+        <p>说到「游戏引擎 / root / 芯片 / 潮汐引擎 / 护盾 / 密钥」时，大屏图形实时切换。</p></div>
+      <div class="card"><div class="num">03 / VOICE</div><h3>中文配音</h3>
+        <p>每段台词独立配音，播放与打字同步，失败场景有专属警告音与震动。</p></div>
+      <div class="card"><div class="num">04 / KEY</div><h3>密钥验证体系</h3>
+        <p>六档套餐：1 天到永久，虚拟支付生成密钥，带真实有效期倒计时。</p></div>
+      <div class="card"><div class="num">05 / ADMIN</div><h3>双管理端</h3>
+        <p>密钥端可生成、导入、复制、作废；反馈端可查看、回复、删除。</p></div>
+      <div class="card"><div class="num">06 / LOCK</div><h3>失败即锁屏</h3>
+        <p>小概率自检失败：红屏告警后立即锁屏，需重新解锁，成功则正常使用。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>GALLERY</h2>
+    <p class="lead">界面预览</p>
+    <div class="shots">
+      <div class="shot"><img src="assets/wallpaper.png" alt="" /><span>锁屏壁纸 · 静态</span></div>
+      <div class="shot"><img src="assets/card.png" alt="" /><span>启动弹窗卡片</span></div>
+      <div class="shot"><img src="assets/icon.png" alt="" /><span>应用图标</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>INSTALL</h2>
+    <p class="lead">三步完成安装</p>
+    <ol class="steps">
+      <li>点击上方「下载安装包」，浏览器会保存 <b>1plus-boot-popup.apk</b>。</li>
+      <li>在下载记录或文件管理里点开它，系统询问时允许「安装未知应用」。</li>
+      <li>打开 App，输入口令进入，按 ① ② ③ 依次授权悬浮窗、忽略电池优化、锁屏权限。</li>
+    </ol>
+    <p class="note">提示：这是本地演示项目，密钥与反馈数据仅保存在本机；虚拟支付不会产生真实扣款。若解锁后没有反应，请到「设置 → 应用 → 1+ 开屏 → 电池」设为不限制。</p>
+  </section>
+
+  <section>
+    <h2>CHANGELOG</h2>
+    <p class="lead" id="logVer">v3.4</p>
+    <div class="card">
+      <p style="line-height:2" id="logNotes">
+        · 密钥管理端支持作废单条 / 全部密钥<br />
+        · 六档密钥套餐（1 天 / 7 天 / 15 天 / 30 天 / 1 年 / 永久），带有效期<br />
+        · 底部三页导航：首页 · 密钥验证 · 我的<br />
+        · 权限升级：会员 ¥5000、管理员密码升级<br />
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <b>1+ 开屏</b> · 科幻开屏壁纸演示项目<br />
+    本地构建 · 数据仅存于本机 · 与任何手机厂商无关
+  </footer>
+</div>
+
+<div id="toast">官网已更新到新版本</div>
+<script>
+(function(){
+  var cur = null;
+  var elPill = document.getElementById('verPill');
+  var elDl = document.getElementById('dl');
+  var elVer = document.getElementById('mVer');
+  var elSize = document.getElementById('mSize');
+  var elLogV = document.getElementById('logVer');
+  var elLogN = document.getElementById('logNotes');
+  var toast = document.getElementById('toast');
+
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 6000);
+  }
+
+  function fill(v){
+    elPill.textContent = 'v' + v.versionName;
+    elVer.textContent = v.versionName;
+    elSize.textContent = v.sizeText;
+    elDl.setAttribute('href', v.file + '?v=' + v.versionCode);
+    elLogV.textContent = 'v' + v.versionName + ' · ' + v.date;
+    if (v.notes && v.notes.length){
+      elLogN.innerHTML = v.notes.map(function(n){ return '· ' + n; }).join('<br />');
+    }
+  }
+
+  function load(first){
+    fetch('version.json?t=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ return r.json(); })
+      .then(function(v){
+        if (!first && cur !== null && v.versionCode !== cur){
+          showToast('官网已更新到 v' + v.versionName + '，点下载获取新版');
+        }
+        cur = v.versionCode;
+        fill(v);
+      })
+      .catch(function(){});
+  }
+
+  load(true);
+  setInterval(function(){ load(false); }, 15000);
+})();
+</script>
+</body>
+</html>
