@@ -1,0 +1,15 @@
+{
+ "name": "1+ 开屏",
+ "versionName": "3.9",
+ "versionCode": 30,
+ "size": 464200,
+ "sizeText": "453 KB",
+ "date": "2026-11-20",
+ "file": "assets/1plus-boot-popup.apk",
+ "notes": [
+  "新增 2027 新机（小米 18 / 1+ 16 / Find X10 / X400 / Mate 90 / S27 / Magic 9 / iQOO 16 / 红魔 12 / GT9 / K100）",
+  "芯片覆盖从早期骁龙 600/801 一直到 2027 的骁龙 8 Elite Gen 6、天玑 9600、麒麟 9040",
+  "126+ 款机型配有独立芯片型号，其余按系列代表芯片显示",
+  "机型总数 927 款"
+ ]
+}
