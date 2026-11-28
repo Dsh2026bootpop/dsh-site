@@ -1,14 +1,14 @@
 {
  "name": "1+ 开屏",
- "versionName": "4.1",
- "versionCode": 32,
+ "versionName": "4.2",
+ "versionCode": 33,
  "size": 468296,
  "sizeText": "457 KB",
  "date": "2026-11-28",
  "file": "assets/1plus-boot-popup.apk",
  "notes": [
-  "进入 App 的加载进度条再次加速：16 秒 → 约 8 秒（2 / 4 / 1.5 / 0.6 秒）",
-  "终端日志同步提速",
-  "其余功能不变"
+  "内置更新检查：进入后自动比对官网版本，有新版本弹窗提示并跳浏览器下载",
+  "我的页面新增「检查更新」按钮",
+  "新增联网权限（仅用于读取 version.json）"
  ]
 }
