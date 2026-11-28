@@ -1,13 +1,13 @@
 {
  "name": "1+ 开屏",
- "versionName": "4.3",
- "versionCode": 34,
+ "versionName": "4.4",
+ "versionCode": 35,
  "size": 468296,
  "sizeText": "457 KB",
  "date": "2026-11-28",
  "file": "assets/1plus-boot-popup.apk",
  "notes": [
-  "更新检测测试版 4.3",
-  "（仅用于验证内置更新弹窗，功能与 4.2 相同）"
+  "「我的」页面用户名后显示当前版本号，随版本自动变化",
+  "标题下版本行去掉「测试构建」字样"
  ]
 }
